@@ -6,7 +6,7 @@ namespace TP4
 {
     static class constantes
     {
-        public const int PRECIO_PEDIDO = 100;
+        public const int PRECIO_PEDIDO = 150;
     }
     class Cadeteria
     {
@@ -34,7 +34,7 @@ namespace TP4
         {
             string informe = "";
             informe += "Nombre: " + cadeteX.Nombre;
-            informe += "\nCantidad de pedidos: " + cadeteX.CalculaCantidadPedidos();
+            informe += "\nCantidad de pedidos: " + cadeteX.CantidadPedidosRealizados();
             informe += "\nJornal del cadete: $" + this.PagoCadete(cadeteX) + "\n\n";
             return informe;
         }
@@ -55,10 +55,10 @@ namespace TP4
             Cadete mejorCadete = null;
             foreach (Cadete cadeteX in ListaCadetes)
             {
-                if (cadeteX.CalculaCantidadPedidos() > mayor)
+                if (cadeteX.CantidadPedidosRealizados() > mayor)
                 {
                     mejorCadete = cadeteX;
-                    mayor = cadeteX.CalculaCantidadPedidos();
+                    mayor = cadeteX.CantidadPedidosRealizados();
                 }
             }
             informe += InformeUnCadete(mejorCadete);
@@ -73,8 +73,8 @@ namespace TP4
             int cantPedidos = 0;
             foreach (Cadete cadeteX in ListaCadetes)
             {
-                acumulador += cadeteX.CalculaCantidadPedidos();
-                cantPedidos += cadeteX.ListadoPedidos.Count;
+                acumulador += cadeteX.CantidadPedidosRealizados();
+                cantPedidos += cadeteX.CalculaCantidadPedidos();
             }
             promedio = acumulador / cantPedidos;
             informe += promedio;

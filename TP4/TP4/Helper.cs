@@ -41,9 +41,31 @@ namespace TP4
             int maximo = TelefonosR.Count();
             return TelefonosR[r.Next(maximo)];
         }
+        public static VehiculoCadete VehiculoCadeteRandom()
+        {
+            Random r = new Random();
+            int num = r.Next(3);
+            if (num == 0)
+                return VehiculoCadete.Auto;
+            else if (num == 1)
+                return VehiculoCadete.Moto;
+            else
+                return VehiculoCadete.Bicicleta;
+        }
+        public static TiposDePedidos TiposDePedidoRandom()
+        {
+            Random r = new Random();
+            int num = r.Next(3);
+            if (num == 0)
+                return TiposDePedidos.Delicado;
+            else if (num == 1)
+                return TiposDePedidos.Express;
+            else
+                return TiposDePedidos.Ecologico;
+        }
         public static string ObservacionRandom()
         {
-            string[] obsR = { "-", "Urgente", "No hay apuro" };
+            string[] obsR = { "---", "Urgente", "No hay apuro" };
             Random r = new Random();
             int maximo = obsR.Count();
             return obsR[r.Next(maximo)];
@@ -61,7 +83,7 @@ namespace TP4
                 int id = Helper.IdRandom();
                 string nombre = Helper.NombrePersonaRandom();
                 string direccion = Helper.DirecionesRandom();
-                string telefono = Helper.TelefonoRandom();
+                string telefono = Helper.TelefonoRandom();                
                 listaClientes.Add(new Cliente(id, nombre, direccion, telefono));
             }
             return listaClientes;
@@ -75,7 +97,8 @@ namespace TP4
                 string nombre = Helper.NombrePersonaRandom();
                 string direccion = Helper.DirecionesRandom();
                 string telefono = Helper.TelefonoRandom();
-                listaCadetes.Add(new Cadete(id, nombre, direccion, telefono));
+                VehiculoCadete tipoVehiculo = Helper.VehiculoCadeteRandom();
+                listaCadetes.Add(new Cadete(id, nombre, direccion, telefono, tipoVehiculo));
             }
             return listaCadetes;
         }
@@ -90,8 +113,10 @@ namespace TP4
                 int numeroPedido = r.Next(10000);
                 string observacion = Helper.ObservacionRandom();
                 bool estado = r.Next(2) == 0;
+                TiposDePedidos tipoPedido = Helper.TiposDePedidoRandom();
+                bool cuponDescuento = r.Next(2) == 0;
                 ind = r.Next(miListaClientes.Count);                            
-                listaPedidos.Add(new Pedido(numeroPedido, observacion, estado, miListaClientes.ElementAt(ind)));
+                listaPedidos.Add(new Pedido(numeroPedido, observacion, estado, tipoPedido, cuponDescuento, miListaClientes.ElementAt(ind)));
                 miListaClientes.ElementAt(ind).CantidadPedidosRealizados++;
             }
             return listaPedidos;
