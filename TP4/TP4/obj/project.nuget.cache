@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "x6LsOlzaTYxdFYGCdHMEWdnlVSaJuO/sl3tidvTFaHzBr3mx3Asg8fM31tguFetn5WaLPRMojGou+NIZYetbEQ==",
+  "dgSpecHash": "YKKjjlXqHZPzCX9WZFCGqkB+MzmsEFbSV7SFyY1vkciJhUIAgDPqGW+GPaMMwBOkZpFNpnuyTuvodDdXV9MCIw==",
   "success": true,
-  "projectFilePath": "F:\\RepoGit\\tpnro4-HernanOcaranza\\TP4\\TP4\\TP4.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\repogit\\TALLER 2\\tpnro4-HernanOcaranza\\TP4\\TP4\\TP4.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Hernan\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
   "logs": []
 }

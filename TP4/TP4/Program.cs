@@ -8,10 +8,14 @@ namespace TP4
         static void Main(string[] args)
         {
             Cadeteria miCadeteria = Helper.CrearCadeteria();
-            List<Cadete> miListaCadetes = Helper.CrearNCadetes(3);
+            List<Cadete> miListaCadetes = Helper.CrearNCadetes(4);
             List<Cliente> miListaClientes = Helper.CrearNClientes(3);
-            List<Pedido> miListaPedidos1 = Helper.CrearNPedidos(20, miListaClientes);
-            Helper.AsignarPedidos(miListaPedidos1, miListaCadetes);
+            List<Pedido> miListaPedidosDe = Helper.CrearNPedidos(10, miListaClientes, TiposDePedidos.Delicado);
+            List<Pedido> miListaPedidosEx = Helper.CrearNPedidos(10, miListaClientes, TiposDePedidos.Express);
+            List<Pedido> miListaPedidosEc = Helper.CrearNPedidos(10, miListaClientes, TiposDePedidos.Ecologico);
+            Helper.AsignarPedidosDeUnTipo(miListaPedidosDe, miListaCadetes);
+            Helper.AsignarPedidosDeUnTipo(miListaPedidosEx, miListaCadetes);
+            Helper.AsignarPedidosDeUnTipo(miListaPedidosEc, miListaCadetes);
             Helper.AsignarCadetesACadeteria(miListaCadetes, miCadeteria);
             Helper.ImprimirInforme(miCadeteria.InformeEntregasRealizadas());
             Helper.ImprimirInforme(miCadeteria.InformeMejorCadete());

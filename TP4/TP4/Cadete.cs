@@ -28,7 +28,8 @@ namespace TP4
 
         public void AgregarPedido(Pedido nuevoPedido)
         {
-            ListadoPedidos.Add(nuevoPedido);
+            if (Helper.VerificarPedido(nuevoPedido.TipoPedido, this.TipoVehiculo))
+                ListadoPedidos.Add(nuevoPedido);          
         }
 
         public override int CalculaCantidadPedidos()

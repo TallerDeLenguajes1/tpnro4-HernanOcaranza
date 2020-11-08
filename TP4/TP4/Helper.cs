@@ -116,8 +116,26 @@ namespace TP4
                 TiposDePedidos tipoPedido = Helper.TiposDePedidoRandom();
                 bool cuponDescuento = r.Next(2) == 0;
                 ind = r.Next(miListaClientes.Count);                            
-                listaPedidos.Add(new Pedido(numeroPedido, observacion, estado, tipoPedido, cuponDescuento, miListaClientes.ElementAt(ind)));
-                miListaClientes.ElementAt(ind).CantidadPedidosRealizados++;
+                listaPedidos.Add(new Pedido(numeroPedido, observacion, estado, tipoPedido, cuponDescuento, miListaClientes[ind]));
+                miListaClientes[ind].CantidadPedidosRealizados++;
+            }
+            return listaPedidos;
+        }
+
+        public static List<Pedido> CrearNPedidos(int N, List<Cliente> miListaClientes, TiposDePedidos miTipoPedido)
+        {
+            List<Pedido> listaPedidos = new List<Pedido>();
+            Random r = new Random();
+            int ind;
+            for (int i = 0; i < N; i++)
+            {
+                int numeroPedido = r.Next(10000);
+                string observacion = Helper.ObservacionRandom();
+                bool estado = r.Next(2) == 0;                
+                bool cuponDescuento = r.Next(2) == 0;
+                ind = r.Next(miListaClientes.Count);
+                listaPedidos.Add(new Pedido(numeroPedido, observacion, estado, miTipoPedido, cuponDescuento, miListaClientes[ind]));
+                miListaClientes[ind].CantidadPedidosRealizados++;
             }
             return listaPedidos;
         }
@@ -142,12 +160,39 @@ namespace TP4
                 listaDeListasPedidos[rand].Add(pedidoX); 
             }                        
             for (int i = 0; i < ind; i++)
-            {
-                Helper.AsignarPedidosUnCadete(listaDeListasPedidos[i], listaCadetes.ElementAt(i));
+            {               
+                Helper.AsignarPedidosUnCadete(listaDeListasPedidos[i], listaCadetes[i]);
             }
         }
 
-        public static void AsignarCadetesACadeteria(List<Cadete> miListaCadetes, Cadeteria miCadeteria)
+        public static bool VerificarPedido (TiposDePedidos tipoPedido, VehiculoCadete vehiculo)
+        {
+            if (tipoPedido == TiposDePedidos.Delicado && vehiculo == VehiculoCadete.Auto)
+                return true;
+            if (tipoPedido == TiposDePedidos.Express && vehiculo == VehiculoCadete.Moto)
+                return true;
+            if (tipoPedido == TiposDePedidos.Ecologico && vehiculo == VehiculoCadete.Bicicleta)
+                return true;
+            return false;
+        }
+
+        public static void AsignarPedidosDeUnTipo(List<Pedido> listaPedidos, List<Cadete> listaCadetes)
+        {
+            int ind = listaCadetes.Count;
+            int rand;            
+            Random r = new Random();
+            foreach (Pedido pedidoX in listaPedidos)
+            {
+                for (int i = 0; i < ind; i++)
+                {
+                    rand = r.Next(0, ind);
+                    if (Helper.VerificarPedido(pedidoX.TipoPedido, listaCadetes[rand].TipoVehiculo))
+                        listaCadetes[rand].AgregarPedido(pedidoX);
+                }                             
+            }            
+        }
+
+            public static void AsignarCadetesACadeteria(List<Cadete> miListaCadetes, Cadeteria miCadeteria)
         {
             foreach (Cadete cadeteX in miListaCadetes)
             {

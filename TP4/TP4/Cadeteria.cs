@@ -7,6 +7,18 @@ namespace TP4
     static class constantes
     {
         public const int PRECIO_PEDIDO = 150;
+
+        public static double CalcularPrecioJornal(VehiculoCadete vehiculo)
+        {
+            double costo = constantes.PRECIO_PEDIDO;
+            if (vehiculo == VehiculoCadete.Moto)
+                costo *= 1.20;
+            else if (vehiculo == VehiculoCadete.Auto)
+                costo *= 1.25;
+            else
+                costo *= 1.05;            
+            return costo;
+        }
     }
     class Cadeteria
     {
@@ -25,19 +37,20 @@ namespace TP4
             ListaCadetes.Add(nuevoCadete);
         }
 
-        public float PagoCadete(Cadete cad)
-        {
-            
-            return cad.CalculaCantidadPedidos() * constantes.PRECIO_PEDIDO;
+        public double PagoCadete(Cadete cad)
+        {            
+            return cad.CantidadPedidosRealizados() * constantes.CalcularPrecioJornal(cad.TipoVehiculo);
         }
         public string InformeUnCadete(Cadete cadeteX)
         {
             string informe = "";
             informe += "Nombre: " + cadeteX.Nombre;
-            informe += "\nCantidad de pedidos: " + cadeteX.CantidadPedidosRealizados();
+            informe += "\nVehiculo: " + cadeteX.TipoVehiculo.ToString();            
+            informe += "\nCantidad de pedidos: " + cadeteX.CantidadPedidosRealizados();          
             informe += "\nJornal del cadete: $" + this.PagoCadete(cadeteX) + "\n\n";
             return informe;
         }
+
         public string InformeEntregasRealizadas()
         {
             string informe = "";

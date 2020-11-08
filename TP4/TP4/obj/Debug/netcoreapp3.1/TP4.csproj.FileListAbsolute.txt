@@ -11,3 +11,16 @@ F:\RepoGit\tpnro4-HernanOcaranza\TP4\TP4\obj\Debug\netcoreapp3.1\TP4.csproj.Core
 F:\RepoGit\tpnro4-HernanOcaranza\TP4\TP4\obj\Debug\netcoreapp3.1\TP4.dll
 F:\RepoGit\tpnro4-HernanOcaranza\TP4\TP4\obj\Debug\netcoreapp3.1\TP4.pdb
 F:\RepoGit\tpnro4-HernanOcaranza\TP4\TP4\obj\Debug\netcoreapp3.1\TP4.genruntimeconfig.cache
+D:\repogit\TALLER 2\tpnro4-HernanOcaranza\TP4\TP4\bin\Debug\netcoreapp3.1\TP4.exe
+D:\repogit\TALLER 2\tpnro4-HernanOcaranza\TP4\TP4\bin\Debug\netcoreapp3.1\TP4.deps.json
+D:\repogit\TALLER 2\tpnro4-HernanOcaranza\TP4\TP4\bin\Debug\netcoreapp3.1\TP4.runtimeconfig.json
+D:\repogit\TALLER 2\tpnro4-HernanOcaranza\TP4\TP4\bin\Debug\netcoreapp3.1\TP4.runtimeconfig.dev.json
+D:\repogit\TALLER 2\tpnro4-HernanOcaranza\TP4\TP4\bin\Debug\netcoreapp3.1\TP4.dll
+D:\repogit\TALLER 2\tpnro4-HernanOcaranza\TP4\TP4\bin\Debug\netcoreapp3.1\TP4.pdb
+D:\repogit\TALLER 2\tpnro4-HernanOcaranza\TP4\TP4\obj\Debug\netcoreapp3.1\TP4.csprojAssemblyReference.cache
+D:\repogit\TALLER 2\tpnro4-HernanOcaranza\TP4\TP4\obj\Debug\netcoreapp3.1\TP4.AssemblyInfoInputs.cache
+D:\repogit\TALLER 2\tpnro4-HernanOcaranza\TP4\TP4\obj\Debug\netcoreapp3.1\TP4.AssemblyInfo.cs
+D:\repogit\TALLER 2\tpnro4-HernanOcaranza\TP4\TP4\obj\Debug\netcoreapp3.1\TP4.csproj.CoreCompileInputs.cache
+D:\repogit\TALLER 2\tpnro4-HernanOcaranza\TP4\TP4\obj\Debug\netcoreapp3.1\TP4.dll
+D:\repogit\TALLER 2\tpnro4-HernanOcaranza\TP4\TP4\obj\Debug\netcoreapp3.1\TP4.pdb
+D:\repogit\TALLER 2\tpnro4-HernanOcaranza\TP4\TP4\obj\Debug\netcoreapp3.1\TP4.genruntimeconfig.cache

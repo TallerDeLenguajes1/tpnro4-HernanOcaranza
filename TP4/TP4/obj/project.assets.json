@@ -8,17 +8,21 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\Hernan\\.nuget\\packages\\": {}
+    "C:\\Users\\Hernan\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\RepoGit\\tpnro4-HernanOcaranza\\TP4\\TP4\\TP4.csproj",
+      "projectUniqueName": "D:\\repogit\\TALLER 2\\tpnro4-HernanOcaranza\\TP4\\TP4\\TP4.csproj",
       "projectName": "TP4",
-      "projectPath": "F:\\RepoGit\\tpnro4-HernanOcaranza\\TP4\\TP4\\TP4.csproj",
+      "projectPath": "D:\\repogit\\TALLER 2\\tpnro4-HernanOcaranza\\TP4\\TP4\\TP4.csproj",
       "packagesPath": "C:\\Users\\Hernan\\.nuget\\packages\\",
-      "outputPath": "F:\\RepoGit\\tpnro4-HernanOcaranza\\TP4\\TP4\\obj\\",
+      "outputPath": "D:\\repogit\\TALLER 2\\tpnro4-HernanOcaranza\\TP4\\TP4\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
         "C:\\Users\\Hernan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -53,12 +57,18 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[3.1.2, 3.1.2]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
       }
     }
   }
